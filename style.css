@@ -211,6 +211,15 @@ h3 {
   font-size: 1.1em;
   font-family: 'Segoe UI', Arial, sans-serif;
   font-weight: 500;
+  /* Prevent breaking card titles in the middle for 2023 and 2024 cards */
+  word-break: normal;
+  overflow-wrap: normal;
+  white-space: normal;
+}
+section > div:nth-child(8) h3,
+section > div:nth-child(9) h3 {
+  /* Prevent line breaks in these card titles */
+  white-space: nowrap;
 }
 
 /* Card images */
@@ -263,6 +272,77 @@ body > p {
   color: var(--intel-dark);
   margin: 30px 0 10px 0;
   font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* Add more space between the instruction and the learn more facts at the bottom */
+body > p + div[style] {
+  height: 48px !important;
+}
+
+/* Learn More facts: Bootstrap grid, spacing, and simple eye-catching design */
+.container .row.learn-more-facts > [class^="col-"] {
+  margin-bottom: 32px;
+  background: #fafdff;
+  border: 1.5px solid #c6d5e1;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px 0 rgba(0,113,197,0.07);
+  padding: 24px 12px 18px 12px;
+  transition: box-shadow 0.2s, border-color 0.2s;
+  /* Center content by default */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Make icon and heading appear on the same line, icon at the front */
+.learn-more-fact-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 12px;
+}
+
+/* Make the icon a bit larger and blue */
+.learn-more-fact-icon {
+  font-size: 2em;
+  color: #0071c5;
+  margin-bottom: 0;
+  margin-right: 0;
+  /* For RTL, put icon on the right */
+}
+html[dir="rtl"] .learn-more-fact-heading {
+  flex-direction: row-reverse;
+}
+html[dir="rtl"] .learn-more-fact-icon {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+/* Add a subtle hover effect for visual interest */
+.container .row.learn-more-facts > [class^="col-"]:hover {
+  box-shadow: 0 8px 24px 0 rgba(0,113,197,0.13);
+  border-color: #0071c5;
+  background: linear-gradient(120deg, #fafdff 80%, #e6f4fb 100%);
+}
+
+/* For RTL: align text and content to the right in the learn more section */
+html[dir="rtl"] .learn-more-facts {
+  direction: rtl;
+  text-align: right;
+}
+html[dir="rtl"] .learn-more-facts > [class^="col-"] {
+  align-items: flex-end !important;
+  text-align: right !important;
+}
+
+/* For LTR: align text and content to the left in the learn more section on small screens */
+@media (max-width: 700px) {
+  .learn-more-facts > [class^="col-"] {
+    align-items: flex-start !important;
+    text-align: left !important;
+  }
 }
 
 /* Responsive styles for various devices */
@@ -411,6 +491,42 @@ body > p {
     font-size: 0.98em;
     padding-left: 4px;
     padding-right: 4px;
+  }
+}
+
+/* --- RTL support for the card section using Bootstrap and simple CSS --- */
+
+/* When the html element has dir="rtl", apply RTL styles to the card section */
+html[dir="rtl"] section.card-scroll {
+  direction: rtl;              /* Cards scroll right-to-left */
+  flex-direction: row;         /* Keep cards in a row for desktop */
+}
+
+html[dir="rtl"] section.card-scroll > div {
+  /* For RTL, use margin-left for spacing between cards */
+  margin-left: 20px;
+  margin-right: 0;
+  align-items: flex-end;
+  text-align: right;
+}
+
+/* Remove left margin from the first card in RTL */
+html[dir="rtl"] section.card-scroll > div:first-child {
+  margin-left: 0;
+}
+
+/* Responsive: stack cards vertically on small screens, still RTL text */
+@media (max-width: 700px) {
+  html[dir="rtl"] section.card-scroll {
+    flex-direction: column;
+    align-items: flex-end;
+    direction: rtl;
+  }
+  html[dir="rtl"] section.card-scroll > div {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    align-items: flex-end;
+    text-align: right;
   }
 }
 
