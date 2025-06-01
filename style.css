@@ -211,15 +211,22 @@ h3 {
   font-size: 1.1em;
   font-family: 'Segoe UI', Arial, sans-serif;
   font-weight: 500;
-  /* Prevent breaking card titles in the middle for 2023 and 2024 cards */
   word-break: normal;
   overflow-wrap: normal;
   white-space: normal;
+  text-align: center;
 }
-section > div:nth-child(8) h3,
-section > div:nth-child(9) h3 {
-  /* Prevent line breaks in these card titles */
-  white-space: nowrap;
+/* RTL: align h3 text to right and reposition elements for RTL layout */
+html[dir="rtl"] h3 {
+  text-align: right;
+}
+html[dir="rtl"] .learn-more-fact-heading {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+html[dir="rtl"] .learn-more-fact-icon {
+  margin-left: 10px;
+  margin-right: 0;
 }
 
 /* Card images */
@@ -280,21 +287,6 @@ body > p + div[style] {
 }
 
 /* Learn More facts: Bootstrap grid, spacing, and simple eye-catching design */
-.container .row.learn-more-facts > [class^="col-"] {
-  margin-bottom: 32px;
-  background: #fafdff;
-  border: 1.5px solid #c6d5e1;
-  border-radius: 14px;
-  box-shadow: 0 2px 12px 0 rgba(0,113,197,0.07);
-  padding: 24px 12px 18px 12px;
-  transition: box-shadow 0.2s, border-color 0.2s;
-  /* Center content by default */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Make icon and heading appear on the same line, icon at the front */
 .learn-more-fact-heading {
   display: flex;
   align-items: center;
@@ -310,21 +302,49 @@ body > p + div[style] {
   color: #0071c5;
   margin-bottom: 0;
   margin-right: 0;
-  /* For RTL, put icon on the right */
-}
-html[dir="rtl"] .learn-more-fact-heading {
-  flex-direction: row-reverse;
-}
-html[dir="rtl"] .learn-more-fact-icon {
-  margin-left: 0;
-  margin-right: 0;
 }
 
-/* Add a subtle hover effect for visual interest */
-.container .row.learn-more-facts > [class^="col-"]:hover {
-  box-shadow: 0 8px 24px 0 rgba(0,113,197,0.13);
-  border-color: #0071c5;
-  background: linear-gradient(120deg, #fafdff 80%, #e6f4fb 100%);
+/* Make all Learn More buttons the same width for consistency on desktop and tablet */
+.learn-more-fact-heading + p + .btn-primary,
+.learn-more-fact-heading + .btn-primary,
+.learn-more-fact-heading ~ .btn-primary {
+  width: 170px;      /* Fixed width for all Learn More buttons */
+  min-width: 170px;
+  max-width: 170px;
+  display: inline-block;
+  text-align: center;
+  margin-left: 0;
+  margin-right: 0;
+  /* This keeps button size the same for LTR and RTL */
+}
+
+/* On small screens, let the button be full width for easier tapping */
+@media (max-width: 700px) {
+  .learn-more-fact-heading + p + .btn-primary,
+  .learn-more-fact-heading + .btn-primary,
+  .learn-more-fact-heading ~ .btn-primary {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+/* RTL: icon after heading, text right-aligned */
+html[dir="rtl"] .learn-more-fact-heading {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+html[dir="rtl"] .learn-more-fact-icon {
+  margin-left: 10px;
+  margin-right: 0;
+}
+html[dir="rtl"] .col-12,
+html[dir="rtl"] .col-md-4 {
+  text-align: right;
+}
+html[dir="rtl"] .learn-more-fact-heading h3 {
+  text-align: right;
 }
 
 /* For RTL: align text and content to the right in the learn more section */
@@ -533,4 +553,113 @@ html[dir="rtl"] section.card-scroll > div:first-child {
 /* Make sure all elements use border-box for sizing */
 *, *::before, *::after {
   box-sizing: border-box;
+}
+
+/* Bootstrap-inspired, visually appealing style for 'Learn More' buttons */
+.btn-primary {
+  background: linear-gradient(90deg, var(--intel-blue) 70%, var(--intel-light-blue) 100%);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 2rem;
+  padding: 12px 36px;
+  font-size: 1.08em;
+  box-shadow: 0 2px 10px rgba(0,113,197,0.10);
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background: linear-gradient(90deg, var(--intel-light-blue) 60%, var(--intel-blue) 100%);
+  color: #003057;
+  box-shadow: 0 6px 18px rgba(0,113,197,0.18);
+  transform: translateY(-2px) scale(1.04);
+  text-decoration: none;
+}
+
+/* Responsive: make button full width and easy to tap on small screens */
+@media (max-width: 700px) {
+  .btn-primary {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+    font-size: 1.1em;
+    margin-top: 10px;
+  }
+}
+
+/* Learn More facts: Make header, icon, and text line up vertically for both LTR and RTL */
+/* The text under the icon/header will start under the icon, following LTR or RTL flow */
+.row.text-center.text-md-start > [class^="col-"] {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* LTR: align to left */
+  text-align: left;
+}
+
+/* Make sure the heading and text are aligned the same way */
+.learn-more-fact-heading {
+  width: 100%;
+  text-align: left;
+  align-items: flex-start;
+  justify-content: flex-start;
+  /* Do not change flex-direction or icon position */
+}
+
+/* The fact text starts under the icon/header */
+.row.text-center.text-md-start > [class^="col-"] p {
+  text-align: left;
+  width: 100%;
+  /* Indent to start under the icon (icon is about 32px + gap) */
+  margin-left: 42px;
+}
+
+/* RTL: keep the same vertical alignment, but align to the right and indent from the right */
+html[dir="rtl"] .row.text-center.text-md-start > [class^="col-"] {
+  align-items: flex-end !important;
+  text-align: right !important;
+}
+html[dir="rtl"] .learn-more-fact-heading {
+  text-align: right !important;
+  align-items: flex-end !important;
+  justify-content: flex-end !important;
+}
+html[dir="rtl"] .row.text-center.text-md-start > [class^="col-"] p {
+  text-align: right !important;
+  margin-left: 0 !important;
+  margin-right: 42px !important; /* Indent from the right to start under the icon */
+}
+
+/* Make the Subscribe button the same size for both LTR and RTL */
+.subscribe-btn,
+.container form .btn-primary {
+  width: 160px;
+  min-width: 160px;
+  max-width: 160px;
+  font-size: 1em;
+  padding: 10px 0;
+  display: inline-block;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* On small screens, let the subscribe button be full width for easier tapping */
+@media (max-width: 700px) {
+  .subscribe-btn,
+  .container form .btn-primary {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+}
+
+/* Newsletter heading and icon: flex row, icon left for LTR, right for RTL (JS will move icon) */
+.newsletter-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-direction: row;
 }

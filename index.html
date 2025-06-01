@@ -428,62 +428,113 @@
 
   <!-- Learn More Section: 3 Intel Topics, using Bootstrap grid for proper layout and RTL support -->
   <div class="container my-5">
-    <!-- Use Bootstrap's row and col for a responsive 3-column layout -->
-    <div class="row g-4 text-center justify-content-center learn-more-facts" id="learn-more-facts-row">
-      <!-- Fact 1 -->
-      <div class="col-12 col-md-4 d-flex flex-column align-items-center learn-more-fact" style="background:none; border:none; box-shadow:none; padding:0;">
-        <!-- Heading with icon at the front, not in a card -->
-        <div class="learn-more-fact-heading">
-          <span class="learn-more-fact-icon">
-            <!-- ...existing code for icon... -->
+    <!-- Bootstrap row for responsive layout, with text alignment classes for LTR/RTL -->
+    <div class="row text-center text-md-start">
+      <!-- Column 1: Microprocessor Innovation -->
+      <div class="col-12 col-md-4 mb-4 d-flex flex-column align-items-center align-items-md-start">
+        <div class="learn-more-fact-heading d-flex align-items-center gap-2 mb-2 w-100">
+          <span class="learn-more-fact-icon d-flex align-items-center">
+            <!-- ...existing code... -->
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#0071c5" class="bi bi-cpu" viewBox="0 0 16 16">
-              <path d="M5 0a.5.5 0 0 1 .5.5V2h1V.5a.5.5 0 0 1 1 0V2h1V.5a.5.5 0 0 1 1 0V2h.5A1.5 1.5 0 0 1 14 3.5V4h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14v.5A1.5 1.5 0 0 1 12.5 16H12v1.5a.5.5 0 0 1-1 0V16h-1v1.5a.5.5 0 0 1-1 0V16h-1v1.5a.5.5 0 0 1-1 0V16h-.5A1.5 1.5 0 0 1 2 14.5V14H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2v-.5A1.5 1.5 0 0 1 3.5 2H4V.5A.5.5 0 0 1 5 0zm1 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H6zm0 1h4a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z"/>
+              <path d="M5 0a.5.5 0 0 1 .5.5V2h1V.5a.5.5 0 0 1 1 0V2h1V.5a.5.5 0 0 1 1 0V2h.5A1.5 1.5 0 0 1 14 3.5V4h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14v.5A1.5 1.5 0 0 1 12.5 16H12v1.5a.5.5 0 0 1-1 0V16h-1v1.5a.5.5 0 0 1-1 0V16h-1v1.5a.5.5 0 0 1-1 0V16h-.5A1.5 1.5 0 0 1 2 14.5V14H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2v-.5A.5.5 0 0 1 2.5 2H3V.5A.5.5 0 0 1 5 0zm1 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H6zm0 1h4a1 1 0 0 1 1 1v6a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1z"/>
             </svg>
           </span>
-          <h3 style="color:#0071c5; margin:0;">Microprocessor Innovation</h3>
+          <h3 class="mb-0" style="color:#0071c5; white-space:normal; flex:1;">Microprocessor Innovation</h3>
         </div>
-        <p>
+        <p class="mb-2 w-100" style="max-width: 350px;">
           Intel is famous for inventing the world's first commercial microprocessor, powering computers and devices everywhere.
         </p>
         <a href="https://www.intel.com/content/www/us/en/history/historic-timeline.html" target="_blank" class="btn btn-primary mt-2" aria-label="Learn more about Intel microprocessors">
           Learn More
         </a>
       </div>
-      <!-- Fact 2 -->
-      <div class="col-12 col-md-4 d-flex flex-column align-items-center learn-more-fact" style="background:none; border:none; box-shadow:none; padding:0;">
-        <div class="learn-more-fact-heading">
-          <span class="learn-more-fact-icon">
+      <!-- Column 2: Moore's Law -->
+      <div class="col-12 col-md-4 mb-4 d-flex flex-column align-items-center align-items-md-start">
+        <div class="learn-more-fact-heading d-flex align-items-center gap-2 mb-2 w-100">
+          <span class="learn-more-fact-icon d-flex align-items-center">
             <!-- ...existing code for icon... -->
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#0071c5" class="bi bi-graph-up" viewBox="0 0 16 16">
               <path fill-rule="evenodd" d="M0 0h1v15h15v1H0V0zm14.293 4.707a1 1 0 0 0-1.414-1.414l-3.182 3.182-2.182-2.182a1 1 0 0 0-1.414 0l-4 4 .708.708 4-4a.5.5 0 0 1 .708 0l2.182 2.182a1 1 0 0 0 1.414 0l3.182-3.182z"/>
             </svg>
           </span>
-          <h3 style="color:#0071c5; margin:0;">Moore's Law</h3>
+          <h3 class="mb-0" style="color:#0071c5; white-space:normal; flex:1;">Moore's Law</h3>
         </div>
-        <p>
+        <p class="mb-2 w-100" style="max-width: 350px;">
           Intel co-founder Gordon Moore predicted that computer chips would double in power every two years, shaping the pace of technology.
         </p>
         <a href="https://www.intel.com/content/www/us/en/silicon-innovations/moores-law-technology.html" target="_blank" class="btn btn-primary mt-2" aria-label="Learn more about Moore's Law">
           Learn More
         </a>
       </div>
-      <!-- Fact 3 -->
-      <div class="col-12 col-md-4 d-flex flex-column align-items-center learn-more-fact" style="background:none; border:none; box-shadow:none; padding:0;">
-        <div class="learn-more-fact-heading">
-          <span class="learn-more-fact-icon">
+      <!-- Column 3: Sustainability Leadership -->
+      <div class="col-12 col-md-4 mb-4 d-flex flex-column align-items-center align-items-md-start">
+        <div class="learn-more-fact-heading d-flex align-items-center gap-2 mb-2 w-100">
+          <span class="learn-more-fact-icon d-flex align-items-center">
             <!-- ...existing code for icon... -->
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#0071c5" class="bi bi-leaf" viewBox="0 0 16 16">
               <path d="M15.854.146a.5.5 0 0 0-.5-.146C13.295.5 10.5 1.5 8.5 3.5 6.5 5.5 5.5 8.295 5.146 10.646a.5.5 0 0 0 .146.5l2.5 2.5a.5.5 0 0 0 .5.146C8.705 15.5 11.5 14.5 13.5 12.5c2-2 3-4.795 3.354-7.146a.5.5 0 0 0-.146-.5l-2.5-2.5zM8.5 14.5l-2.5-2.5C6.5 8.705 7.5 5.91 9.5 3.91c2-2 4.795-3 7.146-3.354l2.5 2.5C15.5 6.5 14.5 9.295 12.5 11.295c-2 2-4.795 3-7.146 3.354z"/>
             </svg>
           </span>
-          <h3 style="color:#0071c5; margin:0;">Sustainability Leadership</h3>
+          <h3 class="mb-0" style="color:#0071c5; white-space:normal; flex:1;">Sustainability Leadership</h3>
         </div>
-        <p>
+        <p class="mb-2 w-100" style="max-width: 350px;">
           Intel leads in green manufacturing, renewable energy, and responsible sourcing to help protect our planet for the future.
         </p>
         <a href="https://www.intel.com/content/www/us/en/corporate-responsibility/environmental-sustainability.html" target="_blank" class="btn btn-primary mt-2" aria-label="Learn more about Intel sustainability">
           Learn More
         </a>
+      </div>
+    </div>
+  </div>
+  <!-- Add extra space before the newsletter section -->
+  <div style="height: 64px;"></div>
+  <!-- Newsletter Subscription Form (Bootstrap) -->
+  <div class="container my-5">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 col-lg-6">
+        <!-- Newsletter form heading with icon and slightly bigger font -->
+        <h2 class="mb-3 text-center newsletter-heading" style="color:#0071c5; font-size:1.7em;">
+          <span class="newsletter-icon-wrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#0071c5" style="vertical-align:middle;" viewBox="0 0 16 16" class="newsletter-icon">
+              <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383-4.708 2.825L15 11.383V5.383zm-.034 7.434-5.966-3.584-5.966 3.584A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.183zM1 11.383l4.708-3.175L1 5.383v6z"/>
+            </svg>
+          </span>
+          <span class="newsletter-title-text">Subscribe to Our Sustainability Newsletter</span>
+        </h2>
+        <!-- Bootstrap styled subscription form -->
+        <form class="needs-validation" novalidate aria-labelledby="newsletterLabel" aria-describedby="newsletterDesc">
+          <!-- Hidden label and description for screen readers -->
+          <div id="newsletterLabel" class="visually-hidden">Sustainability Newsletter Subscription Form</div>
+          <div id="newsletterDesc" class="visually-hidden">Enter your email address to subscribe to our sustainability newsletter. All fields are required.</div>
+          <div class="row g-2">
+            <div class="col-12 col-sm">
+              <!-- Email input with Bootstrap validation and accessible label -->
+              <label for="newsletterEmail" class="form-label visually-hidden">Email address</label>
+              <input
+                type="email"
+                class="form-control"
+                id="newsletterEmail"
+                name="newsletterEmail"
+                placeholder="Enter your email"
+                required
+                aria-required="true"
+                aria-label="Email address"
+                autocomplete="email"
+              >
+              <div class="invalid-feedback">
+                Please enter a valid email address.
+              </div>
+            </div>
+            <div class="col-12 col-sm-auto">
+              <!-- Subscribe button (do not change this) -->
+              <button type="submit" class="btn btn-primary w-100">Subscribe</button>
+            </div>
+          </div>
+        </form>
+        <!-- Bootstrap alert for successful subscription (hidden by default) -->
+        <div id="newsletter-success" class="alert alert-success mt-3 d-none" role="alert" aria-live="polite">
+          Thank you for subscribing!
+        </div>
       </div>
     </div>
   </div>
@@ -526,53 +577,121 @@
       }
     }
 
-    // Function to reverse/restore Learn More facts for RTL/LTR
-    function updateLearnMoreFactsForRTL() {
+    // Move Intel logo to the correct side for RTL/LTR
+    function updateLogoForRTL() {
       var html = document.documentElement;
       var lang = html.lang || 'en';
       var isRTL = rtlLangs.includes(lang);
-      var factsRow = document.getElementById('learn-more-facts-row');
-      if (!factsRow) return;
+      var heroDiv = document.querySelector('header > div');
+      var logo = document.getElementById('logo-img');
+      var heroText = heroDiv ? heroDiv.querySelector('.hero-text') : null;
+      if (!heroDiv || !logo || !heroText) return;
+
+      // For RTL: logo should be after the text (right side)
+      if (isRTL && heroDiv.getAttribute('data-logo-rtl') !== 'true') {
+        if (heroDiv.firstElementChild === logo) {
+          heroDiv.removeChild(logo);
+          heroDiv.appendChild(logo);
+        }
+        heroDiv.setAttribute('data-logo-rtl', 'true');
+      }
+      // For LTR: logo should be before the text (left side)
+      if (!isRTL && heroDiv.getAttribute('data-logo-rtl') === 'true') {
+        if (heroDiv.lastElementChild === logo) {
+          heroDiv.removeChild(logo);
+          heroDiv.insertBefore(logo, heroDiv.firstElementChild);
+        }
+        heroDiv.setAttribute('data-logo-rtl', 'false');
+      }
+    }
+
+    // Function to reverse/restore Learn More facts in the Bootstrap grid for RTL/LTR
+    function updateLearnMoreFactsForRTL() {
+      // Find the Bootstrap grid row for the facts
+      var factsRow = document.querySelector('.container .row');
+      // Make sure this is the correct row by checking for a fact inside
+      if (!factsRow || !factsRow.querySelector('.learn-more-fact-heading')) return;
 
       var facts = Array.from(factsRow.children);
+      // Only keep columns with learn-more-fact-heading (avoid other rows)
+      facts = facts.filter(function(col) {
+        return col.querySelector('.learn-more-fact-heading');
+      });
 
-      // For RTL: reverse order and move icon after title
+      // Detect RTL
+      var html = document.documentElement;
+      var lang = html.lang || 'en';
+      var isRTL = rtlLangs.includes(lang) || html.dir === "rtl";
+
+      // For RTL: reverse order, move icon after title, and align button right
       if (isRTL && factsRow.getAttribute('data-rtl') !== 'true') {
-        // Reverse order
         for (let i = facts.length - 1; i >= 0; i--) {
           factsRow.appendChild(facts[i]);
         }
-        // Move icon after title for each fact
         facts.forEach(function(fact) {
           var heading = fact.querySelector('.learn-more-fact-heading');
-          if (heading) {
-            var icon = heading.querySelector('.learn-more-fact-icon');
-            var title = heading.querySelector('h3');
-            if (icon && title && icon.nextSibling !== null) {
-              // Move icon after title if not already
-              heading.appendChild(icon);
-            }
+          var icon = heading ? heading.querySelector('.learn-more-fact-icon') : null;
+          var title = heading ? heading.querySelector('h3') : null;
+          var btn = fact.querySelector('.btn-primary');
+          // Move icon after title
+          if (heading && icon && title && icon.nextSibling !== null) {
+            heading.appendChild(icon);
+          }
+          // Align button to the right using flex and margin
+          if (btn) {
+            btn.style.marginLeft = "auto";
+            btn.style.marginRight = "0";
+            btn.style.float = "none";
+            btn.style.display = "block";
           }
         });
         factsRow.setAttribute('data-rtl', 'true');
       }
-      // For LTR: restore original order and icon before title
+      // For LTR: restore original order, icon before title, and align button left
       if (!isRTL && factsRow.getAttribute('data-rtl') === 'true') {
         for (let i = facts.length - 1; i >= 0; i--) {
           factsRow.appendChild(facts[i]);
         }
-        // Move icon before title for each fact
         facts.forEach(function(fact) {
           var heading = fact.querySelector('.learn-more-fact-heading');
-          if (heading) {
-            var icon = heading.querySelector('.learn-more-fact-icon');
-            var title = heading.querySelector('h3');
-            if (icon && title && icon.nextSibling !== title) {
-              heading.insertBefore(icon, title);
-            }
+          var icon = heading ? heading.querySelector('.learn-more-fact-icon') : null;
+          var title = heading ? heading.querySelector('h3') : null;
+          var btn = fact.querySelector('.btn-primary');
+          // Move icon before title
+          if (heading && icon && title && icon.nextSibling !== title) {
+            heading.insertBefore(icon, title);
+          }
+          // Align button to the left using flex and margin
+          if (btn) {
+            btn.style.marginLeft = "0";
+            btn.style.marginRight = "auto";
+            btn.style.float = "none";
+            btn.style.display = "block";
           }
         });
         factsRow.setAttribute('data-rtl', 'false');
+      }
+
+      // --- Swap Subscribe button and email input for RTL/LTR ---
+      // Find the newsletter form row
+      var newsletterRow = document.querySelector('.container form .row.g-2');
+      if (newsletterRow) {
+        var emailCol = newsletterRow.querySelector('input[type="email"]')?.parentElement;
+        var btnCol = newsletterRow.querySelector('button[type="submit"]')?.parentElement;
+        if (isRTL && newsletterRow.getAttribute('data-rtl') !== 'true') {
+          // Move button before email input
+          if (btnCol && emailCol && btnCol.nextSibling !== emailCol) {
+            newsletterRow.insertBefore(btnCol, emailCol);
+          }
+          newsletterRow.setAttribute('data-rtl', 'true');
+        }
+        if (!isRTL && newsletterRow.getAttribute('data-rtl') === 'true') {
+          // Move email input before button
+          if (btnCol && emailCol && emailCol.nextSibling !== btnCol) {
+            newsletterRow.insertBefore(emailCol, btnCol);
+          }
+          newsletterRow.setAttribute('data-rtl', 'false');
+        }
       }
     }
 
@@ -594,24 +713,180 @@
       applyBootstrapRTL();
       updateCardOrderForRTL();
       updateLearnMoreFactsForRTL();
+      updateLogoForRTL();
+      updateNewsletterIconRTL();
+      updateWelcomeBtnRTL();
     }
 
-    // Observe changes to the <html> lang attribute
+    // Function to move the newsletter icon for RTL/LTR
+    function updateNewsletterIconRTL() {
+      var html = document.documentElement;
+      var lang = html.lang || 'en';
+      // List of RTL language codes
+      var rtlLangs = ['ar', 'he', 'fa', 'ur', 'dv', 'ps', 'ku', 'yi'];
+      var isRTL = rtlLangs.includes(lang) || html.dir === "rtl";
+      var heading = document.querySelector('.newsletter-heading');
+      if (!heading) return;
+      var icon = heading.querySelector('.newsletter-icon-wrapper');
+      var text = heading.querySelector('.newsletter-title-text');
+      if (!icon || !text) return;
+
+      // For RTL: move icon after text
+      if (isRTL && icon.nextElementSibling !== null) {
+        heading.appendChild(icon);
+      }
+      // For LTR: move icon before text
+      if (!isRTL && heading.firstElementChild !== icon) {
+        heading.insertBefore(icon, text);
+      }
+    }
+
+    // Move the welcome button to the right for RTL, left for LTR
+    function updateWelcomeBtnRTL() {
+      var html = document.documentElement;
+      var lang = html.lang || 'en';
+      var rtlLangs = ['ar', 'he', 'fa', 'ur', 'dv', 'ps', 'ku', 'yi'];
+      var isRTL = rtlLangs.includes(lang) || html.dir === "rtl";
+      var btn = document.getElementById('welcomeBtn');
+      if (!btn) return;
+      // Default: left side
+      btn.style.left = '24px';
+      btn.style.right = '';
+      // If RTL, move to right side
+      if (isRTL) {
+        btn.style.left = '';
+        btn.style.right = '24px';
+      }
+      // For small screens, adjust position
+      if (window.innerWidth <= 700) {
+        if (isRTL) {
+          btn.style.left = '';
+          btn.style.right = '12px';
+        } else {
+          btn.style.right = '';
+          btn.style.left = '12px';
+        }
+      }
+    }
+
+    // Observe changes to the <html> lang or dir attribute
     var observer = new MutationObserver(function(mutations) {
       mutations.forEach(function(mutation) {
-        if (mutation.attributeName === "lang") {
+        if (mutation.attributeName === "lang" || mutation.attributeName === "dir") {
           handleLangChange();
         }
       });
     });
     observer.observe(document.documentElement, { attributes: true });
 
+    // Also check for Google Translate changes every second (simple polling)
+    setInterval(handleLangChange, 1000);
+
     // Initial call on page load
     window.addEventListener('DOMContentLoaded', function() {
-      applyBootstrapRTL();
-      updateCardOrderForRTL();
-      updateLearnMoreFactsForRTL();
+      handleLangChange();
+      updateWelcomeBtnRTL();
+    });
+
+    // Update on window resize for responsiveness
+    window.addEventListener('resize', updateWelcomeBtnRTL);
+
+    // Bootstrap form validation and show success message
+    document.addEventListener('DOMContentLoaded', function () {
+      var forms = document.querySelectorAll('.needs-validation');
+      Array.prototype.slice.call(forms).forEach(function(form) {
+        form.addEventListener('submit', function(event) {
+          // Stop the form from submitting and reloading the page
+          event.preventDefault();
+          event.stopPropagation();
+          // If the form is filled out correctly
+          if (form.checkValidity()) {
+            // Show the green success message
+            var alertBox = document.getElementById('newsletter-success');
+            if (alertBox) {
+              alertBox.classList.remove('d-none');
+              // Hide the message after 3 seconds
+              setTimeout(function() {
+                alertBox.classList.add('d-none');
+              }, 3000);
+            }
+            // Clear the form fields
+            form.reset();
+            // Remove any red error highlights
+            form.classList.remove('was-validated');
+          } else {
+            // If the form is not filled out correctly, show red error highlights
+            form.classList.add('was-validated');
+          }
+        }, false);
+      });
     });
   </script>
+  <!-- Simple Bootstrap footer for beginners -->
+  <footer class="bg-light text-center text-lg-start mt-5 border-top">
+    <div class="container py-3">
+      <!-- ...existing code... -->
+      <div class="text-muted small d-flex justify-content-center">
+        &copy; 2024 Intel Corporation. All rights reserved.
+      </div>
+    </div>
+  </footer>
+  <!-- Bootstrap Modal: Welcome Message (adaptable for small screens) -->
+  <!-- The button is fixed at the bottom left, above the footer, and adapts for small screens -->
+  <button
+    type="button"
+    class="btn btn-primary position-fixed shadow-lg border border-3 border-info"
+    id="welcomeBtn"
+    style="left: 24px; bottom: 24px; z-index: 1050; border-radius: 50%; width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; font-size: 1.1em; font-weight: bold; background: linear-gradient(135deg, #fff 60%, #e6f4fb 100%); color: #111; outline: 3px solid #00b8fc33; outline-offset: 2px;"
+    data-bs-toggle="modal"
+    data-bs-target="#welcomeModal"
+    aria-label="Open welcome message"
+  >
+    <!-- Show "Welcome" on medium and large screens, "Info" on small screens -->
+    <span class="d-none d-sm-inline">Welcome</span>
+    <span class="d-inline d-sm-none" style="font-size:0.98em; font-weight:600;">Info</span>
+  </button>
+  <div class="modal fade" id="welcomeModal" tabindex="-1" aria-labelledby="welcomeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="welcomeModalLabel">Welcome to Intel Sustainability</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>
+            Thank you for visiting!<br>
+            Explore Intel's journey and learn how technology and sustainability go hand in hand.<br>
+            <span class="d-none d-sm-inline">Use the timeline and cards above to discover more facts.</span>
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <style>
+    /* Make sure the welcome button is always visible and not blocking content */
+    #welcomeBtn {
+      /* Already styled for left bottom, round, and shadow */
+      transition: left 0.2s, bottom 0.2s, width 0.2s, height 0.2s;
+    }
+    @media (max-width: 700px) {
+      #welcomeBtn {
+        left: 12px;
+        bottom: 12px;
+        width: 44px;
+        height: 44px;
+        font-size: 1em;
+      }
+    }
+    /* Add extra space at the bottom so button doesn't cover footer on small screens */
+    @media (max-width: 700px) {
+      body {
+        padding-bottom: 70px;
+      }
+    }
+  </style>
 </body>
 </html>
